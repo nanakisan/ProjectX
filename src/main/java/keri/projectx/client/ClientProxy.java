@@ -1,10 +1,15 @@
 package keri.projectx.client;
 
+import keri.projectx.client.model.CustomModelLoader;
+import keri.projectx.client.render.RenderTickHandler;
 import keri.projectx.client.render.block.RenderSimpleGlow;
 import keri.projectx.client.render.block.RenderXycroniumOre;
+import keri.projectx.client.render.item.RenderItemPowerCore;
 import keri.projectx.common.init.ProjectXContent;
 import keri.projectx.common.util.ClientHelper;
 import keri.projectx.common.util.IProxy;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -13,6 +18,9 @@ public class ClientProxy implements IProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent event){
+        ModelLoaderRegistry.registerLoader(CustomModelLoader.INSTANCE);
+        MinecraftForge.EVENT_BUS.register(new RenderTickHandler());
+
         ClientHelper.registerRenderer(ProjectXContent.xycroniumOre, new RenderXycroniumOre());
         ClientHelper.registerRenderer(ProjectXContent.xycroniumBlock, new RenderSimpleGlow(ProjectXContent.xycroniumBlock));
         ClientHelper.registerRenderer(ProjectXContent.xycroniumBricks, new RenderSimpleGlow(ProjectXContent.xycroniumBricks));
@@ -25,6 +33,8 @@ public class ClientProxy implements IProxy {
         ClientHelper.autoRegister(ProjectXContent.xycroniumIngot);
         ClientHelper.autoRegister(ProjectXContent.xycroniumNugget);
         ClientHelper.autoRegister(ProjectXContent.xycroniumDust);
+
+        ClientHelper.registerBuiltin(ProjectXContent.powerCore, new RenderItemPowerCore());
     }
 
     @Override

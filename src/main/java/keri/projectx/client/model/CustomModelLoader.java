@@ -6,7 +6,6 @@ import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ICustomModelLoader;
 import net.minecraftforge.client.model.IModel;
-import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -24,15 +23,6 @@ public class CustomModelLoader implements ICustomModelLoader {
 
     public static final CustomModelLoader INSTANCE = new CustomModelLoader();
     private final Map<ResourceLocation, IModel> models = Maps.newHashMap();
-
-    /**
-     * Register the model loader in the ModelLoaderRegistry
-     * using a static context so it always gets registered
-     * as fast as possible.
-     */
-    static{
-        ModelLoaderRegistry.registerLoader(INSTANCE);
-    }
 
     @Override
     public boolean accepts(ResourceLocation modelLocation) {

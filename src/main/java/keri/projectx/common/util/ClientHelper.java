@@ -1,6 +1,7 @@
 package keri.projectx.common.util;
 
 import codechicken.lib.model.ModelRegistryHelper;
+import codechicken.lib.render.item.IItemRenderer;
 import keri.projectx.client.model.CustomItemRenderer;
 import keri.projectx.client.model.CustomModel;
 import keri.projectx.client.model.CustomModelLoader;
@@ -85,6 +86,15 @@ public class ClientHelper {
                 ModelResourceLocation location = new ModelResourceLocation(item.getRegistryName(), "inventory");
                 ModelLoader.setCustomModelResourceLocation(item, 0, location);
             }
+        }
+        else{
+            throw new IllegalArgumentException("Item can't be null !");
+        }
+    }
+
+    public static void registerBuiltin(ItemBase item, IItemRenderer renderer){
+        if(item != null){
+            ModelRegistryHelper.registerItemRenderer(item, renderer);
         }
         else{
             throw new IllegalArgumentException("Item can't be null !");

@@ -17,6 +17,7 @@ public class ProjectXContent {
     public static ItemBase xycroniumIngot;
     public static ItemBase xycroniumNugget;
     public static ItemBase xycroniumDust;
+    public static ItemBase powerCore;
 
     public static void preInit(){
         xycroniumOre = new BlockXycroniumOre();
@@ -31,6 +32,7 @@ public class ProjectXContent {
         xycroniumIngot = new ItemXycroniumIngot();
         xycroniumNugget = new ItemXycroniumNugget();
         xycroniumDust = new ItemXycroniumDust();
+        powerCore = new ItemPowerCore();
     }
 
     public static void init(){
