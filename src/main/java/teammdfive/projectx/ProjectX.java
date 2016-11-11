@@ -1,12 +1,12 @@
 package teammdfive.projectx;
 
-import teammdfive.projectx.common.util.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import teammdfive.projectx.common.init.ProjectXContent;
+import teammdfive.projectx.common.util.IProxy;
 
 import static teammdfive.projectx.common.util.ModPrefs.*;
 

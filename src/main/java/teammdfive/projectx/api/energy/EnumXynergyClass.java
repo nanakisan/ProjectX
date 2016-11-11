@@ -1,4 +1,4 @@
-package teammdfive.projectx.api;
+package teammdfive.projectx.api.energy;
 
 public enum EnumXynergyClass {
 

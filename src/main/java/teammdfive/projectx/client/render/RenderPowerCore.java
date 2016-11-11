@@ -5,8 +5,8 @@ import codechicken.lib.vec.Vector3;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
-import teammdfive.projectx.api.EnumXynergyClass;
-import teammdfive.projectx.api.EnumXynergyType;
+import teammdfive.projectx.api.energy.EnumXynergyClass;
+import teammdfive.projectx.api.energy.EnumXynergyType;
 
 @SideOnly(Side.CLIENT)
 public class RenderPowerCore {

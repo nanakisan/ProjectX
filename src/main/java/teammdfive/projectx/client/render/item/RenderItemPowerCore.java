@@ -18,8 +18,8 @@ import net.minecraftforge.client.model.IPerspectiveAwareModel;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.tuple.Pair;
-import teammdfive.projectx.api.EnumXynergyClass;
-import teammdfive.projectx.api.EnumXynergyType;
+import teammdfive.projectx.api.energy.EnumXynergyClass;
+import teammdfive.projectx.api.energy.EnumXynergyType;
 import teammdfive.projectx.client.render.RenderPowerCore;
 
 import javax.annotation.Nullable;
