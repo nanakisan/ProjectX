@@ -1,0 +1,16 @@
+[
+{
+  "modid": "projectx",
+  "name": "ProjectX",
+  "description": "XyCraft styled mod for Minecraft 1.10.2+ !",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://twitter.com/KitsuneAlexx/",
+  "updateUrl": "",
+  "authorList": ["KitsuneAlex"],
+  "credits": "InfinityRaider, covers1624",
+  "logoFile": "assets/projectx/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
