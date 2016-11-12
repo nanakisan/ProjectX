@@ -12,6 +12,8 @@ public class ProjectXContent {
     public static BlockBase xycroniumPlatform;
     public static BlockBase xycroniumStructure;
     public static BlockBase xycroniumShield;
+    public static BlockBase sulfurTorch;
+    //public static BlockBase xynergyNode;
 
     public static ItemBase xycroniumCrystal;
     public static ItemBase xycroniumIngot;
@@ -27,6 +29,8 @@ public class ProjectXContent {
         xycroniumPlatform = new BlockXycroniumPlatform();
         xycroniumStructure = new BlockXycroniumStructure();
         xycroniumShield = new BlockXycroniumShield();
+        sulfurTorch = new BlockSulfurTorch();
+        //xynergyNode = new BlockXynergyNode();
 
         xycroniumCrystal = new ItemXycroniumCrystal();
         xycroniumIngot = new ItemXycroniumIngot();
@@ -36,7 +40,7 @@ public class ProjectXContent {
     }
 
     public static void init(){
-
+        //GameRegistry.registerTileEntity(TileXynergyNode.class, "projectx.tile_xynergy_node");
     }
 
 }

@@ -12,12 +12,12 @@ public abstract class TileBase extends TileEntity {
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
-        this.readFromNBT(compound);
+        this.readCustomNBT(compound);
     }
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-        this.writeToNBT(compound);
+        this.writeCustomNBT(compound);
         return super.writeToNBT(compound);
     }
 
@@ -25,14 +25,14 @@ public abstract class TileBase extends TileEntity {
     @Override
     public SPacketUpdateTileEntity getUpdatePacket() {
         NBTTagCompound syncData = new NBTTagCompound();
-        this.writeToNBT(syncData);
+        this.writeCustomNBT(syncData);
         return new SPacketUpdateTileEntity(this.getPos(), 2, syncData);
     }
 
     @Override
     public NBTTagCompound getUpdateTag() {
         NBTTagCompound syncData = new NBTTagCompound();
-        this.writeToNBT(syncData);
+        this.writeCustomNBT(syncData);
         return syncData;
     }
 

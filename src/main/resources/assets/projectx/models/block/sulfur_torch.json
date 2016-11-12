@@ -1,0 +1,6 @@
+{
+  "parent": "block/torch",
+  "textures": {
+    "torch": "projectx:blocks/sulfur_torch"
+  }
+}

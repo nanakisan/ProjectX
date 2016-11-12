@@ -24,6 +24,8 @@ import teammdfive.projectx.common.property.EnumMCColorType;
 @SideOnly(Side.CLIENT)
 public class ClientHelper {
 
+    private static final ResourceAction minecraft_particles = new ResourceAction("minecraft", "textures/particle/particles.png");
+
     public static void registerRenderer(BlockBase block, IRenderingHandler renderer){
         if(block != null && renderer != null){
             if(block instanceof IMetaBlock){
@@ -187,6 +189,10 @@ public class ClientHelper {
 
     public static boolean canRenderInLayer(BlockRenderLayer layer){
         return layer == BlockRenderLayer.SOLID || layer == BlockRenderLayer.CUTOUT_MIPPED;
+    }
+
+    public static void resetParticleTexture(){
+        minecraft_particles.bind(true);
     }
 
     @SideOnly(Side.CLIENT)
