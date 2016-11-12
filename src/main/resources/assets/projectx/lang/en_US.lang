@@ -100,4 +100,27 @@ item.projectx.xycronium_nugget.green.name=Green Xycronium Nugget
 item.projectx.xycronium_nugget.red.name=Red Xycronium Nugget
 item.projectx.xycronium_nugget.dark.name=Dark Xycronium Nugget
 item.projectx.xycronium_nugget.light.name=Light Xycronium Nugget
+item.projectx.power_core.normal_low.name=Power Core
+item.projectx.power_core.normal_middle.name=Power Core
+item.projectx.power_core.normal_omnipotent.name=Power Core
+item.projectx.power_core.radial_low.name=Power Core
+item.projectx.power_core.radial_middle.name=Power Core
+item.projectx.power_core.radial_omnipotent.name=Power Core
+item.projectx.power_core.longrange_low.name=Power Core
+item.projectx.power_core.longrange_middle.name=Power Core
+item.projectx.power_core.longrange_omnipotent.name=Power Core
+
+misc.projectx.tooltip.press_key.name=Press
+misc.projectx.tooltip.show_info.name=to show more information
+misc.projectx.tooltip.xynergy_class.name=Xynergy Class:
+misc.projectx.tooltip.xynergy_type.name=Xynergy Type:
+misc.projectx.tooltip.xc_low.name=Low
+misc.projectx.tooltip.xc_middle.name=Middle
+misc.projectx.tooltip.xc_omnipotent.name=Omnipotent
+misc.projectx.tooltip.xt_normal.name=Normal
+misc.projectx.tooltip.xt_radial.name=Radial
+misc.projectx.tooltip.xt_longrange.name=Longrange
+misc.projectx.key.shift.name=SHIFT
+misc.projectx.key.ctrl.name=CTRL
+misc.projectx.key.alt.name=ALT
 

@@ -82,7 +82,7 @@ public class ItemBase extends Item {
                 iface.addDescription(stack, player, tooltip);
             }
             else{
-                tooltip.add(LanguageHelper.PRESS_KEY + " " + LanguageHelper.KEY_SHIFT + " " + LanguageHelper.KEY_SHIFT);
+                tooltip.add(LanguageHelper.PRESS_KEY + " " + LanguageHelper.KEY_SHIFT + " " + LanguageHelper.SHOW_INFO);
             }
         }
     }

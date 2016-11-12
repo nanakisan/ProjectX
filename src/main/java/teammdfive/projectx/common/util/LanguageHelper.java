@@ -5,37 +5,22 @@ import net.minecraft.client.resources.I18n;
 
 public class LanguageHelper {
 
-    public static final String PRESS_KEY = I18n.format("misc.tooltip.press_key.name");
-    public static final String SHOW_INFO = I18n.format("misc.tooltip.show_info.name");
-    public static final String KEY_SHIFT = ChatFormatting.YELLOW + I18n.format("misc.key.shift.name");
-    public static final String KEY_CTRL = ChatFormatting.GREEN + I18n.format("misc.key.ctrl.name");
-    public static final String KEY_ALT = ChatFormatting.RED + I18n.format("misc.key.alt.name");
+    public static final String PRESS_KEY = format("misc", "tooltip.press_key");
+    public static final String SHOW_INFO = format("misc", "tooltip.show_info");
+    public static final String KEY_SHIFT = ChatFormatting.YELLOW + format("misc", "key.shift") + ChatFormatting.GRAY;
+    public static final String KEY_CTRL = ChatFormatting.GREEN + format("misc", "key.ctrl") + ChatFormatting.GRAY;
+    public static final String KEY_ALT = ChatFormatting.RED + format("misc", "key.alt") + ChatFormatting.GRAY;
+    public static final String XYNERGY_CLASS = format("misc", "tooltip.xynergy_class");
+    public static final String XYNERGY_TYPE = format("misc", "tooltip.xynergy_type");
+    public static final String XC_LOW = ChatFormatting.YELLOW + format("misc", "tooltip.xc_low") + ChatFormatting.GRAY;
+    public static final String XC_MIDDLE = ChatFormatting.GREEN + format("misc", "tooltip.xc_middle") + ChatFormatting.GRAY;
+    public static final String XC_OMNIPOTENT = ChatFormatting.RED + format("misc", "tooltip.xc_omnipotent") + ChatFormatting.GRAY;
+    public static final String XT_NORMAL = ChatFormatting.WHITE + format("misc", "tooltip.xt_normal") + ChatFormatting.GRAY;
+    public static final String XT_RADIAL = ChatFormatting.LIGHT_PURPLE + format("misc", "tooltip.xt_radial") + ChatFormatting.GRAY;
+    public static final String XT_LONGRANGE = ChatFormatting.BLUE + format("misc", "tooltip.xt_longrange") + ChatFormatting.GRAY;
 
-    public static final String[] COLORS = new String[]{
-            I18n.format("misc.color.blue"),
-            I18n.format("misc.color.green"),
-            I18n.format("misc.color.red"),
-            I18n.format("misc.color.dark"),
-            I18n.format("misc.color.light")
-    };
-
-    public static final String[] MC_COLORS = new String[]{
-            I18n.format("misc.color.black"),
-            I18n.format("misc.color.red"),
-            I18n.format("misc.color.green"),
-            I18n.format("misc.color.brown"),
-            I18n.format("misc.color.blue"),
-            I18n.format("misc.color.purple"),
-            I18n.format("misc.color.cyan"),
-            I18n.format("misc.color.light_gray"),
-            I18n.format("misc.color.gray"),
-            I18n.format("misc.color.pink"),
-            I18n.format("misc.color.lime"),
-            I18n.format("misc.color.yellow"),
-            I18n.format("misc.color.light_blue"),
-            I18n.format("misc.color.magenta"),
-            I18n.format("misc.color.orange"),
-            I18n.format("misc.color.white")
-    };
+    private static String format(String prefix, String toFormat){
+        return I18n.format(prefix + "." + ModPrefs.MODID + "." + toFormat + ".name");
+    }
 
 }
