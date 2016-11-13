@@ -23,6 +23,7 @@ public class PXContent {
     public static ItemBase xycroniumNugget;
     public static ItemBase xycroniumDust;
     public static ItemBase quartzCrystal;
+    public static ItemBase xynergyTool;
     public static ItemBase powerCore;
 
     public static void preInit(){
@@ -42,6 +43,7 @@ public class PXContent {
         xycroniumNugget = new ItemXycroniumNugget();
         xycroniumDust = new ItemXycroniumDust();
         quartzCrystal = new ItemQuartzCrystal();
+        xynergyTool = new ItemXynergyTool();
         powerCore = new ItemPowerCore();
     }
 

@@ -11,7 +11,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 
-version = "0.1.0-test4"
+version = "0.1.0-test5"
 group= "keri.projectx" 
 archivesBaseName = "ProjectX-[1.10.2]"
 sourceCompatibility = targetCompatibility = "1.6" 
