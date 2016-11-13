@@ -1,19 +1,14 @@
 package teammdfive.projectx.common.block;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.world.World;
-import net.minecraftforge.common.property.ExtendedBlockState;
-import net.minecraftforge.common.property.IExtendedBlockState;
-import net.minecraftforge.common.property.IUnlistedProperty;
-import teammdfive.projectx.common.property.CommonProperties;
-import teammdfive.projectx.common.property.NodeRenderState;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import teammdfive.projectx.common.tile.TileXynergyNode;
+import teammdfive.projectx.common.util.ClientHelper;
 
 public class BlockXynergyNode extends BlockBase {
 
@@ -28,14 +23,24 @@ public class BlockXynergyNode extends BlockBase {
     }
 
     @Override
-    protected BlockStateContainer createBlockState() {
-        return new ExtendedBlockState(this, new IProperty[0], new IUnlistedProperty[]{CommonProperties.NODE_RENDER_STATE});
+    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
     }
 
     @Override
-    public IBlockState getExtendedState(IBlockState state, IBlockAccess world, BlockPos pos){
-        NodeRenderState renderState = new NodeRenderState();
-        return ((IExtendedBlockState)state).withProperty(CommonProperties.NODE_RENDER_STATE, renderState);
+    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
+    public boolean canRenderInLayer(BlockRenderLayer layer) {
+        return ClientHelper.canRenderInLayer(layer);
     }
 
 }
