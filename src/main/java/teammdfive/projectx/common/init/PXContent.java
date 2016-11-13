@@ -3,7 +3,7 @@ package teammdfive.projectx.common.init;
 import teammdfive.projectx.common.block.*;
 import teammdfive.projectx.common.item.*;
 
-public class ProjectXContent {
+public class PXContent {
 
     public static BlockBase xycroniumOre;
     public static BlockBase xycroniumBlock;
@@ -13,6 +13,7 @@ public class ProjectXContent {
     public static BlockBase xycroniumStructure;
     public static BlockBase xycroniumShield;
     public static BlockBase sulfurTorch;
+    public static BlockBase aluminumTorch;
     //public static BlockBase xynergyNode;
 
     public static ItemBase xycroniumCrystal;
@@ -30,6 +31,7 @@ public class ProjectXContent {
         xycroniumStructure = new BlockXycroniumStructure();
         xycroniumShield = new BlockXycroniumShield();
         sulfurTorch = new BlockSulfurTorch();
+        aluminumTorch = new BlockAluminumTorch();
         //xynergyNode = new BlockXynergyNode();
 
         xycroniumCrystal = new ItemXycroniumCrystal();

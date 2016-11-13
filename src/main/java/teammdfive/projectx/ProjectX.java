@@ -5,8 +5,11 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import teammdfive.projectx.common.init.ProjectXContent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import teammdfive.projectx.common.init.PXContent;
+import teammdfive.projectx.common.init.PXCrafting;
 import teammdfive.projectx.common.util.IProxy;
+import teammdfive.projectx.common.world.PXWorldGen;
 
 import static teammdfive.projectx.common.util.ModPrefs.*;
 
@@ -20,14 +23,16 @@ public class ProjectX {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
-        ProjectXContent.preInit();
+        PXContent.preInit();
         PROXY.preInit(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event){
         PROXY.init(event);
-        ProjectXContent.init();
+        PXContent.init();
+        PXCrafting.init();
+        GameRegistry.registerWorldGenerator(new PXWorldGen(), 1);
     }
 
     @Mod.EventHandler

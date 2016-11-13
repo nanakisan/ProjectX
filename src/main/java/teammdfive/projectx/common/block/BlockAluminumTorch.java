@@ -24,7 +24,7 @@ import teammdfive.projectx.client.particle.SulfurParticle;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockSulfurTorch extends BlockBase {
+public class BlockAluminumTorch extends BlockBase {
 
     private static final AxisAlignedBB STANDING_AABB = new AxisAlignedBB(0.4000000059604645D, 0.0D, 0.4000000059604645D, 0.6000000238418579D, 0.6000000238418579D, 0.6000000238418579D);
     private static final AxisAlignedBB TORCH_NORTH_AABB = new AxisAlignedBB(0.3499999940395355D, 0.20000000298023224D, 0.699999988079071D, 0.6499999761581421D, 0.800000011920929D, 1.0D);
@@ -39,8 +39,8 @@ public class BlockSulfurTorch extends BlockBase {
         }
     });
 
-    public BlockSulfurTorch() {
-        super("sulfur_torch", Material.WOOD);
+    public BlockAluminumTorch() {
+        super("aluminum_torch", Material.IRON);
         this.setHardness(0F);
         this.setTickRandomly(true);
         this.setLightLevel(0.9375F);

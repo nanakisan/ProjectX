@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import teammdfive.projectx.common.init.ProjectXContent;
+import teammdfive.projectx.common.init.PXContent;
 import teammdfive.projectx.common.property.CommonProperties;
 import teammdfive.projectx.common.property.EnumColorType;
 import teammdfive.projectx.common.util.ClientHelper;
@@ -47,7 +47,7 @@ public class BlockXycroniumOre extends BlockBase implements IMetaBlock {
     @Override
     public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
         List<ItemStack> drops = Lists.newArrayList();
-        drops.add(new ItemStack(ProjectXContent.xycroniumCrystal, 4 + fortune, state.getBlock().getMetaFromState(state)));
+        drops.add(new ItemStack(PXContent.xycroniumCrystal, 4 + fortune, state.getBlock().getMetaFromState(state)));
         return drops;
     }
 

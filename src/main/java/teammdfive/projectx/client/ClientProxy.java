@@ -1,5 +1,6 @@
 package teammdfive.projectx.client;
 
+import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,7 +11,7 @@ import teammdfive.projectx.client.render.RenderTickHandler;
 import teammdfive.projectx.client.render.block.RenderSimpleGlow;
 import teammdfive.projectx.client.render.block.RenderXycroniumOre;
 import teammdfive.projectx.client.render.item.RenderItemPowerCore;
-import teammdfive.projectx.common.init.ProjectXContent;
+import teammdfive.projectx.common.init.PXContent;
 import teammdfive.projectx.common.util.ClientHelper;
 import teammdfive.projectx.common.util.IProxy;
 
@@ -21,20 +22,22 @@ public class ClientProxy implements IProxy {
         ModelLoaderRegistry.registerLoader(CustomModelLoader.INSTANCE);
         MinecraftForge.EVENT_BUS.register(new RenderTickHandler());
 
-        ClientHelper.registerRenderer(ProjectXContent.xycroniumOre, new RenderXycroniumOre());
-        ClientHelper.registerRenderer(ProjectXContent.xycroniumBlock, new RenderSimpleGlow(ProjectXContent.xycroniumBlock));
-        ClientHelper.registerRenderer(ProjectXContent.xycroniumBricks, new RenderSimpleGlow(ProjectXContent.xycroniumBricks));
-        ClientHelper.registerRenderer(ProjectXContent.xycroniumPlate, new RenderSimpleGlow(ProjectXContent.xycroniumPlate));
-        ClientHelper.registerRenderer(ProjectXContent.xycroniumPlatform, new RenderSimpleGlow(ProjectXContent.xycroniumPlatform));
-        ClientHelper.registerRenderer(ProjectXContent.xycroniumStructure, new RenderSimpleGlow(ProjectXContent.xycroniumStructure));
-        ClientHelper.registerRenderer(ProjectXContent.xycroniumShield, new RenderSimpleGlow(ProjectXContent.xycroniumShield));
+        ClientHelper.registerRenderer(PXContent.xycroniumOre, new RenderXycroniumOre());
+        ClientHelper.registerRenderer(PXContent.xycroniumBlock, new RenderSimpleGlow(PXContent.xycroniumBlock));
+        ClientHelper.registerRenderer(PXContent.xycroniumBricks, new RenderSimpleGlow(PXContent.xycroniumBricks));
+        ClientHelper.registerRenderer(PXContent.xycroniumPlate, new RenderSimpleGlow(PXContent.xycroniumPlate));
+        ClientHelper.registerRenderer(PXContent.xycroniumPlatform, new RenderSimpleGlow(PXContent.xycroniumPlatform));
+        ClientHelper.registerRenderer(PXContent.xycroniumStructure, new RenderSimpleGlow(PXContent.xycroniumStructure));
+        ClientHelper.registerRenderer(PXContent.xycroniumShield, new RenderSimpleGlow(PXContent.xycroniumShield));
 
-        ClientHelper.autoRegister(ProjectXContent.xycroniumCrystal);
-        ClientHelper.autoRegister(ProjectXContent.xycroniumIngot);
-        ClientHelper.autoRegister(ProjectXContent.xycroniumNugget);
-        ClientHelper.autoRegister(ProjectXContent.xycroniumDust);
+        ClientHelper.autoRegister(PXContent.xycroniumCrystal);
+        ClientHelper.autoRegister(PXContent.xycroniumIngot);
+        ClientHelper.autoRegister(PXContent.xycroniumNugget);
+        ClientHelper.autoRegister(PXContent.xycroniumDust);
+        ClientHelper.autoRegister(Item.getItemFromBlock(PXContent.sulfurTorch));
+        ClientHelper.autoRegister(Item.getItemFromBlock(PXContent.aluminumTorch));
 
-        ClientHelper.registerBuiltin(ProjectXContent.powerCore, new RenderItemPowerCore());
+        ClientHelper.registerBuiltin(PXContent.powerCore, new RenderItemPowerCore());
     }
 
     @Override

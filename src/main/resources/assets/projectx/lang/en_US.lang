@@ -79,6 +79,8 @@ tile.projectx.xycronium_shield.light_blue.name=Light Blue Xycronium Shield
 tile.projectx.xycronium_shield.magenta.name=Magenta Xycronium Shield
 tile.projectx.xycronium_shield.orange.name=Orange Xycronium Shield
 tile.projectx.xycronium_shield.white.name=White Xycronium Shield
+tile.projectx.sulfur_torch.name=Sulfur Torch
+tile.projectx.aluminum_torch.name=Aluminum Torch
 
 item.projectx.xycronium_crystal.blue.name=Blue Xycronium
 item.projectx.xycronium_crystal.green.name=Green Xycronium

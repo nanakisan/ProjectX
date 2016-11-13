@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "projectx:aluminum_torch" },
+    "facing=east": { "model": "projectx:aluminum_torch_wall" },
+    "facing=south": { "model": "projectx:aluminum_torch_wall", "y": 90 },
+    "facing=west": { "model": "projectx:aluminum_torch_wall", "y": 180 },
+    "facing=north": { "model": "projectx:aluminum_torch_wall", "y": 270 }
+  }
+}

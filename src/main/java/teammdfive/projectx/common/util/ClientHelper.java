@@ -75,13 +75,21 @@ public class ClientHelper {
         }
     }
 
-    public static void autoRegister(ItemBase item){
+    public static void autoRegister(Item item){
         if(item != null){
-            if(item.getSubNames() != null){
-                for(int i = 0; i < item.getSubNames().length; i++){
-                    ResourceLocation name = new ResourceLocation(item.getRegistryName().getResourceDomain(), item.getInternalName() + "_" + item.getSubNames()[i]);
-                    ModelResourceLocation location = new ModelResourceLocation(name, "inventory");
-                    ModelLoader.setCustomModelResourceLocation(item, i, location);
+            if(item instanceof ItemBase){
+                ItemBase itemBase = (ItemBase)item;
+
+                if(itemBase.getSubNames() != null){
+                    for(int i = 0; i < itemBase.getSubNames().length; i++){
+                        ResourceLocation name = new ResourceLocation(item.getRegistryName().getResourceDomain(), itemBase.getInternalName() + "_" + itemBase.getSubNames()[i]);
+                        ModelResourceLocation location = new ModelResourceLocation(name, "inventory");
+                        ModelLoader.setCustomModelResourceLocation(itemBase, i, location);
+                    }
+                }
+                else{
+                    ModelResourceLocation location = new ModelResourceLocation(item.getRegistryName(), "inventory");
+                    ModelLoader.setCustomModelResourceLocation(itemBase, 0, location);
                 }
             }
             else{
