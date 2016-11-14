@@ -6,7 +6,7 @@ public class ModPrefs {
 
     public static final String MODID = "projectx";
     public static final String NAME = "ProjectX";
-    public static final String VERSION = "0.1.0-test5";
+    public static final String VERSION = "0.1.0";
     public static final String DEPS = "";
     public static final String ACC_MC = "1.10.2";
     public static final String CSIDE = "teammdfive.projectx.client.ClientProxy";

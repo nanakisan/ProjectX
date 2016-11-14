@@ -32,7 +32,6 @@ public class ClientProxy implements IProxy {
         ModelLoaderRegistry.registerLoader(CustomModelLoader.INSTANCE);
         MinecraftForge.EVENT_BUS.register(new RenderTickHandler());
         MinecraftForge.EVENT_BUS.register(this);
-
         ClientHelper.registerRenderer(PXContent.xycroniumOre, new RenderXycroniumOre());
         ClientHelper.registerRenderer(PXContent.xycroniumBlock, new RenderSimpleGlow(PXContent.xycroniumBlock));
         ClientHelper.registerRenderer(PXContent.xycroniumBricks, new RenderSimpleGlow(PXContent.xycroniumBricks));
@@ -42,7 +41,6 @@ public class ClientProxy implements IProxy {
         ClientHelper.registerRenderer(PXContent.xycroniumShield, new RenderSimpleGlow(PXContent.xycroniumShield));
         ClientHelper.registerRenderer(PXContent.xynergyNode, new RenderXynergyNode());
         ClientRegistry.bindTileEntitySpecialRenderer(TileXynergyNode.class, new XynergyNodeTESR());
-
         ClientHelper.autoRegister(PXContent.xycroniumCrystal);
         ClientHelper.autoRegister(PXContent.xycroniumIngot);
         ClientHelper.autoRegister(PXContent.xycroniumNugget);
@@ -50,7 +48,13 @@ public class ClientProxy implements IProxy {
         ClientHelper.autoRegister(Item.getItemFromBlock(PXContent.sulfurTorch));
         ClientHelper.autoRegister(Item.getItemFromBlock(PXContent.aluminumTorch));
         ClientHelper.autoRegister(PXContent.xynergyTool);
-
+        ClientHelper.autoRegister(PXContent.debugger);
+        ClientHelper.autoRegister(PXContent.cornKernel);
+        ClientHelper.autoRegister(PXContent.corn);
+        ClientHelper.autoRegister(PXContent.cobOCorn);
+        ClientHelper.autoRegister(PXContent.popcorn);
+        ClientHelper.autoRegister(PXContent.sulfurGoo);
+        ClientHelper.autoRegister(Item.getItemFromBlock(PXContent.cornCrop));
         ClientHelper.registerBuiltin(PXContent.powerCore, new RenderItemPowerCore());
         ClientHelper.registerBuiltin(PXContent.quartzCrystal, new RenderItemQuartzCrystal());
     }

@@ -1,5 +1,9 @@
 package teammdfive.projectx.common.init;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import teammdfive.projectx.common.block.*;
 import teammdfive.projectx.common.item.*;
@@ -7,24 +11,31 @@ import teammdfive.projectx.common.tile.TileXynergyNode;
 
 public class PXContent {
 
-    public static BlockBase xycroniumOre;
-    public static BlockBase xycroniumBlock;
-    public static BlockBase xycroniumBricks;
-    public static BlockBase xycroniumPlate;
-    public static BlockBase xycroniumPlatform;
-    public static BlockBase xycroniumStructure;
-    public static BlockBase xycroniumShield;
-    public static BlockBase sulfurTorch;
-    public static BlockBase aluminumTorch;
-    public static BlockBase xynergyNode;
+    public static Block xycroniumOre;
+    public static Block xycroniumBlock;
+    public static Block xycroniumBricks;
+    public static Block xycroniumPlate;
+    public static Block xycroniumPlatform;
+    public static Block xycroniumStructure;
+    public static Block xycroniumShield;
+    public static Block sulfurTorch;
+    public static Block aluminumTorch;
+    public static Block cornCrop;
+    public static Block xynergyNode;
 
-    public static ItemBase xycroniumCrystal;
-    public static ItemBase xycroniumIngot;
-    public static ItemBase xycroniumNugget;
-    public static ItemBase xycroniumDust;
-    public static ItemBase quartzCrystal;
-    public static ItemBase xynergyTool;
-    public static ItemBase powerCore;
+    public static Item xycroniumCrystal;
+    public static Item xycroniumIngot;
+    public static Item xycroniumNugget;
+    public static Item xycroniumDust;
+    public static Item quartzCrystal;
+    public static Item cornKernel;
+    public static Item corn;
+    public static Item cobOCorn;
+    public static Item popcorn;
+    public static Item sulfurGoo;
+    public static Item xynergyTool;
+    public static Item powerCore;
+    public static Item debugger;
 
     public static void preInit(){
         xycroniumOre = new BlockXycroniumOre();
@@ -36,6 +47,7 @@ public class PXContent {
         xycroniumShield = new BlockXycroniumShield();
         sulfurTorch = new BlockSulfurTorch();
         aluminumTorch = new BlockAluminumTorch();
+        cornCrop = new BlockCornCrop();
         xynergyNode = new BlockXynergyNode();
 
         xycroniumCrystal = new ItemXycroniumCrystal();
@@ -43,11 +55,18 @@ public class PXContent {
         xycroniumNugget = new ItemXycroniumNugget();
         xycroniumDust = new ItemXycroniumDust();
         quartzCrystal = new ItemQuartzCrystal();
+        cornKernel = new ItemCornKernel();
+        corn = new ItemCorn();
+        cobOCorn = new ItemCobOCorn();
+        popcorn = new ItemPopcorn();
+        sulfurGoo = new ItemSulfurGoo();
         xynergyTool = new ItemXynergyTool();
         powerCore = new ItemPowerCore();
+        debugger = new ItemDebugger();
     }
 
     public static void init(){
+        MinecraftForge.addGrassSeed(new ItemStack(cornKernel, 1, 0), 2);
         GameRegistry.registerTileEntity(TileXynergyNode.class, "projectx.tile_xynergy_node");
     }
 

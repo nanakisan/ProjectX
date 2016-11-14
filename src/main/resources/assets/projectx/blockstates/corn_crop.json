@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=bottom0": { "model": "projectx:corn_crop_B0" },
+    "stage=bottom1": { "model": "projectx:corn_crop_B1" },
+    "stage=bottom2": { "model": "projectx:corn_crop_B2" },
+    "stage=bottom3": { "model": "projectx:corn_crop_B3" },
+    "stage=bottom4": { "model": "projectx:corn_crop_B4" },
+    "stage=top0": { "model": "projectx:corn_crop_T0" }
+  }
+}

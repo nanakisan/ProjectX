@@ -2,6 +2,7 @@ package teammdfive.projectx.common.util;
 
 import codechicken.lib.model.ModelRegistryHelper;
 import codechicken.lib.render.item.IItemRenderer;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
@@ -26,7 +27,7 @@ public class ClientHelper {
 
     private static final ResourceAction minecraft_particles = new ResourceAction("minecraft", "textures/particle/particles.png");
 
-    public static void registerRenderer(BlockBase block, IRenderingHandler renderer){
+    public static void registerRenderer(Block block, IRenderingHandler renderer){
         if(block != null && renderer != null){
             if(block instanceof IMetaBlock){
                 IMetaBlock iface = (IMetaBlock)block;
@@ -102,7 +103,7 @@ public class ClientHelper {
         }
     }
 
-    public static void registerBuiltin(ItemBase item, IItemRenderer renderer){
+    public static void registerBuiltin(Item item, IItemRenderer renderer){
         if(item != null){
             ModelRegistryHelper.registerItemRenderer(item, renderer);
         }

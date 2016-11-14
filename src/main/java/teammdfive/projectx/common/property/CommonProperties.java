@@ -6,5 +6,6 @@ public class CommonProperties {
 
     public static final PropertyEnum<EnumColorType> COLOR = PropertyEnum.create("color", EnumColorType.class);
     public static final PropertyEnum<EnumMCColorType> MC_COLOR = PropertyEnum.create("color", EnumMCColorType.class);
+    public static final PropertyEnum<EnumGrowthStage> GROWTH_STAGE = PropertyEnum.create("stage", EnumGrowthStage.class);
 
 }

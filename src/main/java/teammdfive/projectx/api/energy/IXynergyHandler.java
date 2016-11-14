@@ -1,6 +1,12 @@
 package teammdfive.projectx.api.energy;
 
-public interface IXynergyHandler extends IXynergyConnection, IXynergyProvider, IXynergyAcceptor {
+public interface IXynergyHandler {
+
+    boolean canConnectXynergy();
+
+    boolean canProvideXynergy();
+
+    boolean canAcceptXynergy();
 
     XynergyStorage getInternalStorage();
 

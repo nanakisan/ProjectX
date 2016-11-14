@@ -29,13 +29,13 @@ public class RenderSimpleGlow implements IRenderingHandler {
     private final ResourceLocation animation;
     private final ResourceLocation location;
 
-    public RenderSimpleGlow(BlockBase block){
-        if(block == null){
+    public RenderSimpleGlow(Block block){
+        if(block == null || !(block instanceof BlockBase)){
             throw new IllegalArgumentException("Block can't be null !");
         }
 
         this.animation = new ResourceLocation(ModPrefs.MODID, "blocks/animation");
-        this.location = new ResourceLocation(ModPrefs.MODID, "blocks/" + block.getInternalName());
+        this.location = new ResourceLocation(ModPrefs.MODID, "blocks/" + ((BlockBase)block).getInternalName());
     }
 
     @Override
