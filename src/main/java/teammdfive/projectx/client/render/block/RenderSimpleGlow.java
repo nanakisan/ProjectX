@@ -51,25 +51,35 @@ public class RenderSimpleGlow implements IRenderingHandler {
             if(iface.getSubNames().length == EnumColorType.values().length){
                 EnumColorType type = (EnumColorType)state.getValue(CommonProperties.COLOR);
 
-                switch(layer){
-                    case SOLID:
-                        builder.setTexture(textureGetter.getTexture(this.animation)).setFullbright(true).setColor(ModPrefs.xyColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
-                        break;
-                    case CUTOUT_MIPPED:
-                        builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
-                        break;
+                if(layer != null){
+                    switch(layer){
+                        case SOLID:
+                            builder.setTexture(textureGetter.getTexture(this.animation)).setFullbright(true).setColor(ModPrefs.xyColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                            break;
+                        case CUTOUT_MIPPED:
+                            builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                            break;
+                    }
+                }
+                else{
+                    builder.setTexture(textureGetter.getTexture(this.animation)).setFullbright(true).setColor(ModPrefs.xyColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                 }
             }
             else if(iface.getSubNames().length == EnumMCColorType.values().length){
                 EnumMCColorType type = (EnumMCColorType)state.getValue(CommonProperties.MC_COLOR);
 
-                switch(layer){
-                    case SOLID:
-                        builder.setTexture(textureGetter.getTexture(this.animation)).setFullbright(true).setColor(ModPrefs.mcColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
-                        break;
-                    case CUTOUT_MIPPED:
-                        builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
-                        break;
+                if(layer != null){
+                    switch(layer){
+                        case SOLID:
+                            builder.setTexture(textureGetter.getTexture(this.animation)).setFullbright(true).setColor(ModPrefs.mcColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                            break;
+                        case CUTOUT_MIPPED:
+                            builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                            break;
+                    }
+                }
+                else{
+                    builder.setTexture(textureGetter.getTexture(this.animation)).setFullbright(true).setColor(ModPrefs.mcColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                 }
             }
         }

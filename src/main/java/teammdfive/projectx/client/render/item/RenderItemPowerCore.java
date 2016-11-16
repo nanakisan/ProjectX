@@ -31,10 +31,10 @@ public class RenderItemPowerCore implements IItemRenderer, IPerspectiveAwareMode
 
     @Override
     public void renderItem(ItemStack stack) {
-        RenderHelper.enableGUIStandardItemLighting();
         RenderHelper.enableStandardItemLighting();
         GlStateManager.pushMatrix();
         GlStateManager.translate(0.5D, 0.5D, 0.5D);
+        GlStateManager.enableBlend();
 
         switch(stack.getMetadata()){
             case 0:
@@ -66,9 +66,9 @@ public class RenderItemPowerCore implements IItemRenderer, IPerspectiveAwareMode
                 break;
         }
 
-        GlStateManager.enableBlend();
-        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+        GlStateManager.disableBlend();
         GlStateManager.popMatrix();
+        RenderHelper.disableStandardItemLighting();
     }
 
     @Override

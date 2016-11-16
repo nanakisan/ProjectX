@@ -20,17 +20,18 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import teammdfive.projectx.client.particle.SulfurParticle;
+import teammdfive.projectx.common.init.PXConfig;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 public class BlockSulfurTorch extends BlockBase {
 
-    private final AxisAlignedBB STANDING_AABB = new AxisAlignedBB(0.4000000059604645D, 0.0D, 0.4000000059604645D, 0.6000000238418579D, 0.6000000238418579D, 0.6000000238418579D);
-    private final AxisAlignedBB TORCH_NORTH_AABB = new AxisAlignedBB(0.3499999940395355D, 0.20000000298023224D, 0.699999988079071D, 0.6499999761581421D, 0.800000011920929D, 1.0D);
-    private final AxisAlignedBB TORCH_SOUTH_AABB = new AxisAlignedBB(0.3499999940395355D, 0.20000000298023224D, 0.0D, 0.6499999761581421D, 0.800000011920929D, 0.30000001192092896D);
-    private final AxisAlignedBB TORCH_WEST_AABB = new AxisAlignedBB(0.699999988079071D, 0.20000000298023224D, 0.3499999940395355D, 1.0D, 0.800000011920929D, 0.6499999761581421D);
-    private final AxisAlignedBB TORCH_EAST_AABB = new AxisAlignedBB(0.0D, 0.20000000298023224D, 0.3499999940395355D, 0.30000001192092896D, 0.800000011920929D, 0.6499999761581421D);
+    private static final AxisAlignedBB STANDING_AABB = new AxisAlignedBB(0.4000000059604645D, 0.0D, 0.4000000059604645D, 0.6000000238418579D, 0.6000000238418579D, 0.6000000238418579D);
+    private static final AxisAlignedBB TORCH_NORTH_AABB = new AxisAlignedBB(0.3499999940395355D, 0.20000000298023224D, 0.699999988079071D, 0.6499999761581421D, 0.800000011920929D, 1.0D);
+    private static final AxisAlignedBB TORCH_SOUTH_AABB = new AxisAlignedBB(0.3499999940395355D, 0.20000000298023224D, 0.0D, 0.6499999761581421D, 0.800000011920929D, 0.30000001192092896D);
+    private static final AxisAlignedBB TORCH_WEST_AABB = new AxisAlignedBB(0.699999988079071D, 0.20000000298023224D, 0.3499999940395355D, 1.0D, 0.800000011920929D, 0.6499999761581421D);
+    private static final AxisAlignedBB TORCH_EAST_AABB = new AxisAlignedBB(0.0D, 0.20000000298023224D, 0.3499999940395355D, 0.30000001192092896D, 0.800000011920929D, 0.6499999761581421D);
 
     private static final PropertyDirection FACING = PropertyDirection.create("facing", new Predicate<EnumFacing>() {
         @Override
@@ -53,6 +54,7 @@ public class BlockSulfurTorch extends BlockBase {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
         switch((EnumFacing)state.getValue(FACING)){
             case EAST:
@@ -70,18 +72,21 @@ public class BlockSulfurTorch extends BlockBase {
 
     @Nullable
     @Override
+    @SuppressWarnings("deprecation")
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos){
         return NULL_AABB;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
     public boolean isOpaqueCube(IBlockState state){
         return false;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
     public boolean isFullCube(IBlockState state){
         return false;
     }
@@ -135,6 +140,7 @@ public class BlockSulfurTorch extends BlockBase {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block){
         this.onNeighborChangeInternal(world, pos, state);
     }
@@ -182,6 +188,7 @@ public class BlockSulfurTorch extends BlockBase {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public IBlockState getStateFromMeta(int meta){
         IBlockState iblockstate = this.getDefaultState();
 
@@ -239,11 +246,13 @@ public class BlockSulfurTorch extends BlockBase {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public IBlockState withRotation(IBlockState state, Rotation rot){
         return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public IBlockState withMirror(IBlockState state, Mirror mirror){
         return state.withRotation(mirror.toRotation((EnumFacing)state.getValue(FACING)));
     }
@@ -251,34 +260,36 @@ public class BlockSulfurTorch extends BlockBase {
     @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
-        double modY = 0.2199999988079071D;
-        double modX = 0.27000001072883606D;
-        int meta = this.getMetaFromState(state);
-        float x1 = (float)pos.getX() + 0.5F;
-        float y1 = (float)pos.getY() + 0.6F;
-        float z1 = (float)pos.getZ() + 0.49F;
+        if(PXConfig.enableParticles){
+            double modY = 0.2199999988079071D;
+            double modX = 0.27000001072883606D;
+            int meta = this.getMetaFromState(state);
+            float x1 = (float)pos.getX() + 0.5F;
+            float y1 = (float)pos.getY() + 0.6F;
+            float z1 = (float)pos.getZ() + 0.49F;
 
-        if(meta >= 1 && meta <= 4){
-            y1 = (float) ((double) y1 + modY);
+            if(meta >= 1 && meta <= 4){
+                y1 = (float) ((double) y1 + modY);
+            }
+
+            switch (meta) {
+                case 1:
+                    x1 = (float)((double)x1 - modX);
+                    break;
+                case 2:
+                    x1 = (float)((double)x1 + modX);
+                    break;
+                case 3:
+                    z1 = (float)((double)z1 - modX);
+                    break;
+                case 4:
+                    z1 = (float)((double)z1 + modX);
+            }
+
+            float offset = rand.nextFloat() - rand.nextFloat();
+            final SulfurParticle particle = new SulfurParticle(world, x1, y1, z1, 0.9F, 0.4F, 1F, 1F);
+            Minecraft.getMinecraft().effectRenderer.addEffect(particle);
         }
-
-        switch (meta) {
-            case 1:
-                x1 = (float)((double)x1 - modX);
-                break;
-            case 2:
-                x1 = (float)((double)x1 + modX);
-                break;
-            case 3:
-                z1 = (float)((double)z1 - modX);
-                break;
-            case 4:
-                z1 = (float)((double)z1 + modX);
-        }
-
-        float offset = rand.nextFloat() - rand.nextFloat();
-        final SulfurParticle particle = new SulfurParticle(world, x1, y1, z1, 0.9F, 0.4F, 1F, 1F);
-        Minecraft.getMinecraft().effectRenderer.addEffect(particle);
     }
 
 }

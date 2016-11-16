@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import teammdfive.projectx.common.init.PXConfig;
 import teammdfive.projectx.common.init.PXContent;
 import teammdfive.projectx.common.init.PXCrafting;
 import teammdfive.projectx.common.util.IProxy;
@@ -23,6 +24,7 @@ public class ProjectX {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
+        new PXConfig(event);
         PXContent.preInit();
         PROXY.preInit(event);
     }

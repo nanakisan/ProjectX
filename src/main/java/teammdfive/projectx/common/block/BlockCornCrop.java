@@ -28,9 +28,9 @@ import java.util.Random;
 public class BlockCornCrop extends BlockBush implements IGrowable {
 
     private final String blockName = "corn_crop";
-    private final AxisAlignedBB BOX_0 = new AxisAlignedBB(0D, 0D, 0D, 1D, 0.375D, 1D);
-    private final AxisAlignedBB BOX_1 = new AxisAlignedBB(0D, 0D, 0D, 1D, 0.625D, 1D);
-    private final AxisAlignedBB BOX_2 = new AxisAlignedBB(0D, 0D, 0D, 1D, 0.875D, 1D);
+    private static final AxisAlignedBB BOX_0 = new AxisAlignedBB(0D, 0D, 0D, 1D, 0.375D, 1D);
+    private static final AxisAlignedBB BOX_1 = new AxisAlignedBB(0D, 0D, 0D, 1D, 0.625D, 1D);
+    private static final AxisAlignedBB BOX_2 = new AxisAlignedBB(0D, 0D, 0D, 1D, 0.875D, 1D);
 
     public BlockCornCrop(){
         this.setCreativeTab((CreativeTabs)null);
@@ -49,6 +49,7 @@ public class BlockCornCrop extends BlockBush implements IGrowable {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public IBlockState getStateFromMeta(int meta) {
         return this.blockState.getBaseState().withProperty(CommonProperties.GROWTH_STAGE, EnumGrowthStage.values()[meta]);
     }
@@ -82,6 +83,7 @@ public class BlockCornCrop extends BlockBush implements IGrowable {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public AxisAlignedBB getSelectedBoundingBox(IBlockState state, World world, BlockPos pos){
         int meta = this.getMetaFromState(world.getBlockState(pos));
         return meta == 0 ? BOX_0 : meta == 1 ? BOX_1 : meta == 2 ? BOX_2 : FULL_BLOCK_AABB;

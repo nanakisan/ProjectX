@@ -16,7 +16,7 @@ public class RenderPowerCore {
     public static void render(ColourRGBA colorCore, ColourRGBA colorShell, Vector3 translation, boolean spin){
         GL11.glPushMatrix();
         GL11.glTranslated(translation.x, translation.y, translation.z);
-        GL11.glBlendFunc(770, 1);
+        //GL11.glBlendFunc(770, 1);
 
         if(spin){
             GL11.glRotated(RenderTickHandler.getRenderTime(), 0D, 1D, 0D);
@@ -26,7 +26,7 @@ public class RenderPowerCore {
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslated(translation.x, translation.y, translation.z);
-        GL11.glBlendFunc(770, 1);
+        //GL11.glBlendFunc(770, 1);
 
         if(spin){
             GL11.glRotated((-RenderTickHandler.getRenderTime() * 20D) * 0.2D, 0D, 1D, 0D);

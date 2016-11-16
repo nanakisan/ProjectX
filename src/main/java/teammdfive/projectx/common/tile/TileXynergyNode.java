@@ -21,19 +21,21 @@ public class TileXynergyNode extends TileBase implements IXynergyHandler, ITicka
     private boolean listChanged = false;
     private ArrayList<BlockPos> connectedDevices = Lists.newArrayList();
 
+    public TileXynergyNode(){
+
+    }
+
     @Override
     public void update(){
-        if(this.listChanged){
-            for(int i = 0; i < this.connectedDevices.size(); i++){
-                BlockPos entry = this.connectedDevices.get(i);
+        for(int i = 0; i < this.connectedDevices.size(); i++){
+            BlockPos entry = this.connectedDevices.get(i);
 
-                if(this.worldObj.getTileEntity(entry) == null){
-                    this.connectedDevices.remove(this.connectedDevices.indexOf(entry));
-                }
+            if(this.worldObj.getTileEntity(entry) == null){
+                this.connectedDevices.remove(this.connectedDevices.indexOf(entry));
             }
-
-            this.listChanged = false;
         }
+
+        this.listChanged = false;
     }
 
     @Override
@@ -93,8 +95,6 @@ public class TileXynergyNode extends TileBase implements IXynergyHandler, ITicka
             }
         }
     }
-
-    public void updateDeviceList(){ this.listChanged = true; }
 
     public ArrayList<BlockPos> getConnectedDevices(){ return this.connectedDevices; }
 

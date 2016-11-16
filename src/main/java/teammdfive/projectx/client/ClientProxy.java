@@ -72,6 +72,7 @@ public class ClientProxy implements IProxy {
     @SubscribeEvent
     public void registerIcons(TextureStitchEvent.Pre event){
         IconRegistry.addIcon("quartz_crystal", new ResourceLocation(ModPrefs.MODID, "items/quartz_crystal"), event.getMap());
+        IconRegistry.addIcon("xynergy_beam", new ResourceLocation(ModPrefs.MODID, "particle/xynergy_beam"), event.getMap());
     }
 
 }

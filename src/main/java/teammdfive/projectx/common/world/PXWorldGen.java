@@ -7,6 +7,7 @@ import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
+import teammdfive.projectx.common.init.PXConfig;
 import teammdfive.projectx.common.init.PXContent;
 
 import java.util.Random;
@@ -30,7 +31,13 @@ public class PXWorldGen implements IWorldGenerator {
 
     private void generateOverworld(World world, Random random, int chunkX, int chunkZ){
         for(int i = 0; i < 5; i++){
-            this.addOre(PXContent.xycroniumOre.getStateFromMeta(i), random, world, chunkX, chunkZ, 20, 70, 3, 6, 22);
+            this.addOre(PXContent.xycroniumOre.getStateFromMeta(i), random, world, chunkX, chunkZ,
+                    PXConfig.xycroniumOreMinHeight,
+                    PXConfig.xycroniumOreMaxHeight,
+                    PXConfig.xycroniumOreMinVeinSize,
+                    PXConfig.xycroniumOreMaxVeinSize,
+                    PXConfig.xycroniumOreChance
+            );
         }
     }
 

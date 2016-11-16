@@ -66,7 +66,7 @@ public class PXContent {
     }
 
     public static void init(){
-        MinecraftForge.addGrassSeed(new ItemStack(cornKernel, 1, 0), 2);
+        MinecraftForge.addGrassSeed(new ItemStack(cornKernel, 1, 0), PXConfig.cornSeedChance);
         GameRegistry.registerTileEntity(TileXynergyNode.class, "projectx.tile_xynergy_node");
     }
 
