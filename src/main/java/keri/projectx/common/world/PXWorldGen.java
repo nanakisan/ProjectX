@@ -29,6 +29,7 @@ public class PXWorldGen implements IWorldGenerator {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private void generateOverworld(World world, Random random, int chunkX, int chunkZ){
         for(int i = 0; i < 5; i++){
             this.addOre(PXContent.xycroniumOre.getStateFromMeta(i), random, world, chunkX, chunkZ,

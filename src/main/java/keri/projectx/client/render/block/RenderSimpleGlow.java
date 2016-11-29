@@ -2,8 +2,8 @@ package keri.projectx.client.render.block;
 
 import codechicken.lib.vec.Cuboid6;
 import com.google.common.collect.Lists;
+import keri.projectx.client.ClientProxy;
 import keri.projectx.client.render.IRenderingHandler;
-import keri.projectx.client.render.IconRegistry;
 import keri.projectx.client.render.ModelBuilder;
 import keri.projectx.client.render.TextureGetter;
 import keri.projectx.common.block.BlockBase;
@@ -53,7 +53,7 @@ public class RenderSimpleGlow implements IRenderingHandler {
                 if(layer != null){
                     switch(layer){
                         case SOLID:
-                            builder.setTexture(IconRegistry.getIcon("animation")).setFullbright(true).setColor(ModPrefs.xyColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                            builder.setTexture(ClientProxy.getAnimationIcon()).setFullbright(true).setColor(ModPrefs.xyColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                             break;
                         case CUTOUT_MIPPED:
                             builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
@@ -61,7 +61,7 @@ public class RenderSimpleGlow implements IRenderingHandler {
                     }
                 }
                 else{
-                    builder.setTexture(IconRegistry.getIcon("animation")).setFullbright(true).setColor(ModPrefs.xyColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                    builder.setTexture(ClientProxy.getAnimationIcon()).setFullbright(true).setColor(ModPrefs.xyColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                 }
             }
             else if(iface.getSubNames().length == EnumMCColorType.values().length){
@@ -70,7 +70,7 @@ public class RenderSimpleGlow implements IRenderingHandler {
                 if(layer != null){
                     switch(layer){
                         case SOLID:
-                            builder.setTexture(IconRegistry.getIcon("animation")).setFullbright(true).setColor(ModPrefs.mcColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                            builder.setTexture(ClientProxy.getAnimationIcon()).setFullbright(true).setColor(ModPrefs.mcColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                             break;
                         case CUTOUT_MIPPED:
                             builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
@@ -78,7 +78,7 @@ public class RenderSimpleGlow implements IRenderingHandler {
                     }
                 }
                 else{
-                    builder.setTexture(IconRegistry.getIcon("animation")).setFullbright(true).setColor(ModPrefs.mcColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                    builder.setTexture(ClientProxy.getAnimationIcon()).setFullbright(true).setColor(ModPrefs.mcColors[type.getID()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                 }
             }
         }
@@ -90,11 +90,11 @@ public class RenderSimpleGlow implements IRenderingHandler {
             IMetaBlock iface = (IMetaBlock)Block.getBlockFromItem(stack.getItem());
 
             if(iface.getSubNames().length == EnumColorType.values().length){
-                builder.setTexture(IconRegistry.getIcon("animation")).setColor(ModPrefs.xyColors[stack.getMetadata()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                builder.setTexture(ClientProxy.getAnimationIcon()).setColor(ModPrefs.xyColors[stack.getMetadata()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                 builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
             }
             else if(iface.getSubNames().length == EnumMCColorType.values().length){
-                builder.setTexture(IconRegistry.getIcon("animation")).setColor(ModPrefs.mcColors[stack.getMetadata()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
+                builder.setTexture(ClientProxy.getAnimationIcon()).setColor(ModPrefs.mcColors[stack.getMetadata()]).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
                 builder.setTexture(textureGetter.getTexture(this.location)).addCuboid(new Cuboid6(0D, 0D, 0D, 16D, 16D, 16D));
             }
         }

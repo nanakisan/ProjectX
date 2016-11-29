@@ -13,15 +13,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class XynergyNodeTESR extends TileEntitySpecialRenderer<TileXynergyNode> {
 
-    //// TODO: 21.11.2016 Implement proper behaviour of the Xynergy Core
-
     @Override
     public void renderTileEntityAt(TileXynergyNode tile, double x, double y, double z, float partialTicks, int destroyStage) {
         final VertexBuffer buffer = Tessellator.getInstance().getBuffer();
+        Vector3 translation = new Vector3(x, y, z).add(0.5D, 0.5D, 0.5D);
         GlStateManager.pushMatrix();
 
         if(tile.getHasCore()){
-            Vector3 translation = new Vector3(x, y, z).add(0.5D, 0.5D, 0.5D);
             RenderPowerCore.render(tile.getXynergyClass(), tile.getXynergyType(), translation, true);
         }
 

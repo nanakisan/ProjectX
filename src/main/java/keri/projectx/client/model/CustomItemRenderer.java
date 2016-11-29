@@ -35,8 +35,6 @@ import java.util.Random;
 @SideOnly(Side.CLIENT)
 public class CustomItemRenderer implements IItemRenderer, IPerspectiveAwareModel {
 
-    //// TODO: 21.11.2016 Implement fullbright CubeBuilder for inventory/item rendering
-
     private IRenderingHandler renderer;
 
     public CustomItemRenderer(IRenderingHandler renderer){

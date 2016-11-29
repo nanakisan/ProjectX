@@ -15,6 +15,7 @@ public class PXConfig {
     public static final String WORLDGEN = "worldgen";
 
     public static boolean enableParticles;
+    public static boolean hdAnimation;
 
     public static int cornSeedChance;
     public static int xycroniumOreChance;
@@ -50,6 +51,7 @@ public class PXConfig {
 
     private void getFlags(Configuration config){
         enableParticles = config.get(GENERAL, "enableParticles", true).getBoolean();
+        hdAnimation = config.get(GENERAL, "enableHdAnimation", false).getBoolean();
         cornSeedChance = config.get(WORLDGEN, "cornSeedChance", 4).getInt();
         xycroniumOreChance = config.get(WORLDGEN, "xycroniumOreChance", 19).getInt();
         xycroniumOreMinHeight = config.get(WORLDGEN, "xycroniumOreMinHeight", 12).getInt();
